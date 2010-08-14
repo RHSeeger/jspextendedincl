@@ -1,0 +1,40 @@
+<%@ page import="java.util.Collections" %>
+<%@ page import="java.util.Enumeration" %>
+<%@ page import="java.util.Enumeration" %>
+<%@ page import="org.apache.commons.lang.StringUtils" %>
+
+Attributes (PAGE_SCOPE):
+<ul>
+    <%
+    for(String item : Collections.list(pageContext.getAttributeNamesInScope(PageContext.PAGE_SCOPE))) {
+        %> <li><%= item %> = <%= pageContext.getAttribute(item, PageContext.PAGE_SCOPE) %> <%
+    }
+    %>
+</ul>
+
+Attributes (REQUEST_SCOPE):
+<ul>
+    <%
+    for(String item : Collections.list(pageContext.getAttributeNamesInScope(PageContext.REQUEST_SCOPE))) {
+        %> <li><%= item %> = <%= pageContext.getAttribute(item, PageContext.REQUEST_SCOPE) %> <%
+    }
+    %>
+</ul>
+
+Attributes (SESSION_SCOPE):
+<ul>
+    <%
+    for(String item : Collections.list(pageContext.getAttributeNamesInScope(PageContext.SESSION_SCOPE))) {
+        %> <li><%= item %> = <%= pageContext.getAttribute(item, PageContext.SESSION_SCOPE) %> <%
+    }
+    %>
+</ul>
+
+Params:
+<ul>
+    <%
+    for(String item : Collections.list((Enumeration<String>)request.getParameterNames())) {
+        %> <li><%= item %> = <%= StringUtils.join(request.getParameterValues(item), ",") %> <%
+    }
+    %>
+</ul>

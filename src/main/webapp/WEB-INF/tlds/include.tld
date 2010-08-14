@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE taglib PUBLIC "-//Sun Microsystems, Inc.//DTD JSP Tag Library 1.1//EN" 
+"http://java.sun.com/j2ee/dtds/web-jsptaglibrary_1_1.dtd">
+
+<taglib>
+	<tlibversion>1.0</tlibversion>
+	<jspversion>1.1</jspversion>
+	<shortname>IncludeTags</shortname>
+	<uri>http://www.example.com</uri>
+	<info>Include Tags Library</info>
+
+	<tag>
+		<name>include</name>
+		<tagclass>net.rkseeger.taglib.include.IncludeTag</tagclass>
+		<bodycontent>JSP</bodycontent>
+		<info>Your first JSP Tag</info>
+
+		<attribute>
+			<name>page</name>
+			<required>true</required>
+		</attribute>
+		<attribute>
+			<name>flush</name>
+			<required>false</required>
+		</attribute>
+	</tag>
+
+	<tag>
+		<name>attrib</name>
+		<tagclass>net.rkseeger.taglib.include.AttributeTag</tagclass>
+		<bodycontent>empty</bodycontent>
+		<info>Object key/values to pass into the page</info>
+
+		<attribute>
+			<name>name</name>
+			<required>true</required>
+		</attribute>
+		<attribute>
+			<name>value</name>
+			<required>true</required>
+		</attribute>
+	</tag>
+
+	<tag>
+		<name>param</name>
+		<tagclass>net.rkseeger.taglib.include.ParamTag</tagclass>
+		<bodycontent>empty</bodycontent>
+		<info>String key/values to pass into the page</info>
+
+		<attribute>
+			<name>name</name>
+			<required>true</required>
+		</attribute>
+		<attribute>
+			<name>value</name>
+			<required>true</required>
+		</attribute>
+	</tag>
+
+	<tag>
+		<name>catch</name>
+		<tagclass>net.rkseeger.taglib.include.CatchTag</tagclass>
+        <teiclass>net.rkseeger.taglib.include.CatchTEI</teiclass>
+		<bodycontent>JSP</bodycontent>
+		<info>The block to execute when the include throws an exception</info>
+
+		<attribute>
+			<name>var</name>
+			<required>false</required>
+		</attribute>
+	</tag>
+</taglib>
