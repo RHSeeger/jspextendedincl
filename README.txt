@@ -1,7 +1,7 @@
-This is, at least for now, a proof of concept of an extended jsp:include command, allowing the user to 
-pass in both parameters (String) and attributes (Object), as well as take actions when there is an 
-Exception (specifically, Throwable) thrown in the act of including the specified file. This allows for 
-a clean, concise way of "rolling up" an included module if it fails to "work".
+Imported from:
+    https://sourceforge.net/projects/jspextendedincl/
+
+This is, at least for now, a proof of concept of an extended jsp:include command, allowing the user to pass in both parameters (String) and attributes (Object), as well as take actions when there is an Exception (specifically, Throwable) thrown in the act of including the specified file. This allows for a clean, concise way of "rolling up" an included module if it fails to "work".
 
 Sample code:
 <inc:include page="normal.jsp">
@@ -15,7 +15,6 @@ Sample code:
     </inc:catch>
 </inc:include>
 
-License information can be found in LICENSE.txt. That being said, it's a BSD license, so should allow
-anyone to use the code however they need to.
+License information can be found in LICENSE.txt. That being said, it's a BSD license, so should allow anyone to use the code however they need to.
 
 Robert Seeger
